@@ -2,6 +2,10 @@
 
 open Microsoft.FSharp.Math
 
+let browvec l = RowVector.Generic.of_list l
+
+let bmatrix l = Matrix.Generic.of_list l
+
 let toBipolar x = if x then 1.0 else -1.0
 
 let toBoolean x = 
@@ -28,3 +32,12 @@ let subtractIdentity m = m - Matrix.identity (m.NumRows)
 *)
 
 let contribution m =  m |> (inverseMultiply >> subtractIdentity)
+
+let column (m:Matrix<'a>) i = 
+    seq { for j = 0 to m.NumRows do m.get i j }
+    |> Matrix.Generic.of_seq 
+
+let present (pattern:RowVector<bool>) (weights:matrix) : RowVector<bool> =
+    let n = pattern |> Matrix.Generic.of_rowvec |> toBipolarM
+    browvec [ false; false; false; false ]
+    

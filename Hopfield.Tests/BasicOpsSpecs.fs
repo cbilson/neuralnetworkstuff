@@ -23,29 +23,34 @@ let it_converts_0_to_boolean_false =
     
 [<Fact>]
 let it_converts_boolean_matrices_to_bipolar =
-    let m = Matrix.Generic.of_list [[ false; true; false; true ]]
-    toBipolarM m |> should equal (matrix [[ -1.0; 1.0; -1.0; 1.0 ]])
+    bmatrix [[ false; true; false; true ]]
+     |> toBipolarM 
+     |> should equal (matrix [[ -1.0; 1.0; -1.0; 1.0 ]])
 
 [<Fact>]
 let it_converts_bipolar_matrices_to_boolean =
-    let m = matrix [[ -1.0; 1.0; -1.0; 1.0 ]]
-    toBooleanM m |> should equal (Matrix.Generic.of_list [[ false; true; false; true ]])
+    matrix [[ -1.0; 1.0; -1.0; 1.0 ]]
+        |> toBooleanM
+        |> should equal (bmatrix [[ false; true; false; true ]])
 
 [<Fact>]
 let it_inverse_multiplies_matrices =
-    let m = matrix [[ -1.0; 1.0; -1.0; 1.0 ]]
-    inverseMultiply m |> should equal (matrix [[ 1.0; -1.0;  1.0; -1.0];
-                                          [-1.0;  1.0; -1.0;  1.0];
-                                          [ 1.0; -1.0;  1.0; -1.0];
-                                          [-1.0;  1.0; -1.0;  1.0]]);
+    matrix [[ -1.0; 1.0; -1.0; 1.0 ]]
+        |> inverseMultiply 
+        |> should equal (matrix [[ 1.0; -1.0;  1.0; -1.0];
+                                 [-1.0;  1.0; -1.0;  1.0];
+                                 [ 1.0; -1.0;  1.0; -1.0];
+                                 [-1.0;  1.0; -1.0;  1.0]]);
                                           
 [<Fact>]
 let it_subtracts_identity =
-    let m = matrix [[ -1.0; 1.0; -1.0; 1.0 ]] |> inverseMultiply
-    subtractIdentity m |> should equal (matrix [[ 0.0; -1.0;  1.0; -1.0];
-                                                [-1.0;  0.0; -1.0;  1.0];
-                                                [ 1.0; -1.0;  0.0; -1.0];
-                                                [-1.0;  1.0; -1.0;  0.0]]);
+    matrix [[ -1.0; 1.0; -1.0; 1.0 ]] 
+        |> inverseMultiply
+        |> subtractIdentity
+        |> should equal (matrix [[ 0.0; -1.0;  1.0; -1.0];
+                                 [-1.0;  0.0; -1.0;  1.0];
+                                 [ 1.0; -1.0;  0.0; -1.0];
+                                 [-1.0;  1.0; -1.0;  0.0]]);
 
 [<Fact>]
 let it_computes_contribution =
@@ -55,5 +60,21 @@ let it_computes_contribution =
                                  [-1.0;  0.0; -1.0;  1.0];
                                  [ 1.0; -1.0;  0.0; -1.0];
                                  [-1.0;  1.0; -1.0;  0.0]])
+
+[<Fact>]
+let it_can_get_the_columns_of_a_matrix =
+    let m = matrix [ [  1.0;  2.0;  3.0;  4.0 ];
+                     [  5.0;  6.0;  7.0;  8.0 ];
+                     [  9.0; 10.0; 11.0; 12.0 ];
+                     [ 13.0; 14.0; 15.0; 16.0 ] ]
+    m |> column 0 |> should equal (matrix [[1.0]; [5.0]; [9.0]; [13.0]])
+    m |> column 1 |> should equal (matrix [[2.0]; [6.0]; [10.0]; [14.0]])
+    m |> column 2 |> should equal (matrix [[3.0]; [7.0]; [11.0]; [15.0]])
+    m |> column 3 |> should equal (matrix [[4.0]; [8.0]; [12.0]; [16.0]])
     
-                                           
+[<Fact>]
+let it_can_be_presented_a_pattern =
+     browvec [ false; true; false; true ]
+        |> present
+        |> should equal (browvec [ false; false; false; false ])
+        
