@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hopfield", "Hopfield\Hopfield.fsproj", "{DAF1D741-4F33-43AC-A530-672C41A234C3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hopfield.Tests", "Hopfield.Tests\Hopfield.Tests.fsproj", "{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF1D741-4F33-43AC-A530-672C41A234C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF1D741-4F33-43AC-A530-672C41A234C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF1D741-4F33-43AC-A530-672C41A234C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF1D741-4F33-43AC-A530-672C41A234C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
