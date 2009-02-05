@@ -18,26 +18,19 @@ let toBipolarM m =
 let toBooleanM m =
     m |> Matrix.to_array2 |> Array2.map toBoolean |> Matrix.Generic.of_array2
     
-let inverseMultiply m = (Matrix.transpose m) * m
+let inverseMultiply (m:matrix) : matrix = (Matrix.transpose m) * m
     
-let subtractIdentity m = m - Matrix.identity (m.NumRows) 
+let subtractIdentity (m:matrix) : matrix = m - Matrix.identity (m.NumRows) 
 
-(*
-    I wanted:
-        let contribution = inverseMultiply >> subtractIdentity
-        
-    but when I do this, contribution is null when used from other modules,
-    like the test fixtures
-    
-*)
+let contribution() =  inverseMultiply >> subtractIdentity
 
-let contribution m =  m |> (inverseMultiply >> subtractIdentity)
+let column i m = 
+    matrix [ [ Matrix.get m 0 i ]; 
+             [ Matrix.get m 1 i ]; 
+             [ Matrix.get m 2 i ]; 
+             [ Matrix.get m 3 i ] ]
 
-let column (m:Matrix<'a>) i = 
-    seq { for j = 0 to m.NumRows do m.get i j }
-    |> Matrix.Generic.of_seq 
-
-let present (pattern:RowVector<bool>) (weights:matrix) : RowVector<bool> =
-    let n = pattern |> Matrix.Generic.of_rowvec |> toBipolarM
-    browvec [ false; false; false; false ]
+let present (pattern:bool seq) (weights:matrix) : bool seq =
+    let n = pattern |> Seq.map toBipolar
+    seq { yield false; yield false; yield false; yield false }
     

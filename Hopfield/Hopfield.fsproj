@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{daf1d741-4f33-43ac-a530-672c41a234c3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Hopfield</RootNamespace>
     <AssemblyName>Hopfield</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
