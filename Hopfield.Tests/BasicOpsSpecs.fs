@@ -35,7 +35,7 @@ let it_subtracts_identity() =
 [<Fact>]
 let it_computes_contribution() =
     matrix [[ -1.0; 1.0; -1.0; 1.0 ]] 
-        |> contribution() 
+        |> contribution 
         |> should equal (matrix [[ 0.0; -1.0;  1.0; -1.0];
                                  [-1.0;  0.0; -1.0;  1.0];
                                  [ 1.0; -1.0;  0.0; -1.0];

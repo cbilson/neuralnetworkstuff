@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{daf1d741-4f33-43ac-a530-672c41a234c3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Hopfield</RootNamespace>
-    <AssemblyName>Hopfield</AssemblyName>
+    <ProjectGuid>{f03f4fb9-d30c-4d0d-a7b1-15488a5039b7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NeuralNetworkStuff.Visualization</RootNamespace>
+    <AssemblyName>NeuralNetworkStuff.Visualization</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Name>Hopfield</Name>
+    <Name>NeuralNetworkStuff.Visualization</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,17 +31,31 @@
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.PowerPack, Version=1.9.6.2, Culture=neutral, PublicKeyToken=a19089b1c74d0809">
-      <Name>FSharp.PowerPack</Name>
-      <AssemblyName>FSharp.PowerPack.dll</AssemblyName>
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>PresentationCore</Name>
+      <AssemblyName>PresentationCore.dll</AssemblyName>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>PresentationFramework</Name>
+      <AssemblyName>PresentationFramework.dll</AssemblyName>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Name>System.Xml</Name>
+      <AssemblyName>System.XML.dll</AssemblyName>
+    </Reference>
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>WindowsBase</Name>
+      <AssemblyName>WindowsBase.dll</AssemblyName>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ops.fs" />
+    <Compile Include="XamlHelpers.fs" />
+    <Compile Include="Program.fs" />
+    <EmbeddedResource Include="MainWindow.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

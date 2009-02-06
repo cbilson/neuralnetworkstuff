@@ -8,7 +8,7 @@ let inverseMultiply (m:matrix) : matrix = (Matrix.transpose m) * m
     
 let subtractIdentity (m:matrix) : matrix = m - Matrix.identity (m.NumRows) 
 
-let contribution() =  inverseMultiply >> subtractIdentity
+let contribution =  inverseMultiply >> subtractIdentity
 
 let column i m = 
     matrix [ [ Matrix.get m 0 i ]; [ Matrix.get m 1 i ]; 

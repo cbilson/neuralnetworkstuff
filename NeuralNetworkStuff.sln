@@ -5,6 +5,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hopfield", "Hopfield\Hopfie
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hopfield.Tests", "Hopfield.Tests\Hopfield.Tests.fsproj", "{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NeuralNetworkStuff.Visualization", "NeuralNetworkStuff.Visualization\NeuralNetworkStuff.Visualization.fsproj", "{F03F4FB9-D30C-4D0D-A7B1-15488A5039B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{710BEFBC-60B6-4AB9-9EF5-412A0821C0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03F4FB9-D30C-4D0D-A7B1-15488A5039B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03F4FB9-D30C-4D0D-A7B1-15488A5039B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03F4FB9-D30C-4D0D-A7B1-15488A5039B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03F4FB9-D30C-4D0D-A7B1-15488A5039B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
