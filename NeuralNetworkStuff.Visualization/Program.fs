@@ -15,7 +15,6 @@ let showView n (w:Window) =
     let v = loadXaml<Control> n :> obj
     va.Content <- v
 
-
 #if COMPILED
 [<STAThread>]
 do

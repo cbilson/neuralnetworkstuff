@@ -1,0 +1,12 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	Width="400"
+	Height="300">
+  <StackPanel>
+    <Label Width="200">Neural Network Visualations</Label>
+    <!-- the ShowGridLines property is debug only so you can see the gridlines -->
+    <StackPanel Orientation="Horizontal">
+      <TextBlock>Weights</TextBlock>
+      <ItemsControl id="viewArea" />
+    </StackPanel>
+  </StackPanel>
+</Window>
