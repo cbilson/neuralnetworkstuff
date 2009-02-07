@@ -11,6 +11,12 @@ type HopfieldCommands() =
     static let identifyCommand = new RoutedUICommand("Identify", "identify", typeof<HopfieldCommands>)
 
     static member public Train with get = trainCommand
+    
+    static member public CanExecuteTrainCommand _ (args:CanExecuteRoutedEventArgs) : unit = 
+        args.Handled <- true
+
+    //static member public ExecuteTrainCommand _ (args:ExecuteRoutedEventArgs) : unit = ()
+    
     static member public Identify with get = identifyCommand
     
-    
+        
