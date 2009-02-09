@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f03f4fb9-d30c-4d0d-a7b1-15488a5039b7}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>NeuralNetworkStuff.Visualization</RootNamespace>
-    <AssemblyName>NeuralNetworkStuff.Visualization</AssemblyName>
+    <ProjectGuid>{cd63e211-ee64-4def-b011-143c6fbe382d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ApplicationCore</RootNamespace>
+    <AssemblyName>ApplicationCore</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Name>NeuralNetworkStuff.Visualization</Name>
+    <Name>ApplicationCore</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,10 +43,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Name>System.Drawing</Name>
-      <AssemblyName>System.Drawing.dll</AssemblyName>
-    </Reference>
     <Reference Include="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
       <Name>System.Xml</Name>
       <AssemblyName>System.XML.dll</AssemblyName>
@@ -57,20 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
-    <EmbeddedResource Include="MainWindow.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ApplicationCore\ApplicationCore.fsproj">
-      <Name>ApplicationCore</Name>
-      <Project>{cd63e211-ee64-4def-b011-143c6fbe382d}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Hopfield\Hopfield.fsproj">
-      <Name>Hopfield</Name>
-      <Project>{daf1d741-4f33-43ac-a530-672c41a234c3}</Project>
-      <Private>True</Private>
-    </ProjectReference>
+    <Compile Include="XamlHelpers.fs" />
+    <Compile Include="App.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
