@@ -12,6 +12,6 @@ namespace Hopfield
         static let trainCommand = new RoutedUICommand("Train", "train", typeof<Commands>)
         static let identifyCommand = new RoutedUICommand("Identify", "identify", typeof<Commands>)
 
-        static member public Train with get = trainCommand
+        static member public Train with get() = trainCommand
         
-        static member public Identify with get = identifyCommand
+        static member public Identify with get() = identifyCommand
