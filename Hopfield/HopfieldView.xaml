@@ -1,11 +1,5 @@
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:h="clr-namespace:Hopfield;assembly=Hopfield">
-  <!--
-  <UserControl.CommandBindings>
-    <CommandBinding Command="h:HopfieldCommands.Train" />
-    <CommandBinding Command="h:HopfieldCommands.Identify" />
-  </UserControl.CommandBindings>
-  -->
   <StackPanel>
     <Label Width="200">Neural Network Visualations</Label>
     <!-- the ShowGridLines property is debug only so you can see the gridlines -->
@@ -56,8 +50,8 @@
         <TextBlock Grid.Row="4" Grid.Column="4">0</TextBlock>
         <CheckBox Grid.Row="4" Grid.Column="6" />  
             
-        <Button Grid.Row="5" Grid.Column="6">Train</Button>
-        <Button Grid.Row="5" Grid.Column="7">Identify</Button>
+        <Button Command="h:Commands.Train" Grid.Row="5" Grid.Column="6">Train</Button>
+        <Button Command="h:Commands.Identify" Grid.Row="5" Grid.Column="7">Identify</Button>
       </Grid>  
     </StackPanel>
   </StackPanel>
