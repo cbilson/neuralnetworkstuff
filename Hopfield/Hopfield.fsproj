@@ -31,10 +31,11 @@
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HopfieldCommands.fs" />
+    <Compile Include="Commands.fs" />
     <Compile Include="Ops.fs" />
     <EmbeddedResource Include="HopfieldView.xaml" />
-    <Compile Include="HopfieldModule.fs" />
+    <Compile Include="Module.fs" />
+    <None Include="Bug.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.PowerPack, Version=1.9.6.2, Culture=neutral, PublicKeyToken=a19089b1c74d0809">
@@ -45,6 +46,10 @@
       <Name>PresentationCore</Name>
       <AssemblyName>PresentationCore.dll</AssemblyName>
     </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>PresentationFramework</Name>
+      <AssemblyName>PresentationFramework.dll</AssemblyName>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -53,6 +58,11 @@
       <Name>WindowsBase</Name>
       <AssemblyName>WindowsBase.dll</AssemblyName>
     </Reference>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.fsproj">
+      <Name>ApplicationCore</Name>
+      <Project>{cd63e211-ee64-4def-b011-143c6fbe382d}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
