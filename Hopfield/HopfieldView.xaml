@@ -26,32 +26,33 @@
           <RowDefinition Height="25" />
         </Grid.RowDefinitions>
         
-        <TextBlock Grid.Row="1" Grid.Column="1">0</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="2">0</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="3">0</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="4">0</TextBlock>
-        <CheckBox Grid.Row="1" Grid.Column="6" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding w11}" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding w21}" />
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding w31}" />
+        <TextBlock Grid.Row="1" Grid.Column="4" Text="{Binding w41}" />
+        <CheckBox Grid.Row="1" Grid.Column="6" IsChecked="{Binding p1, Mode=TwoWay}" />
   
-        <TextBlock Grid.Row="2" Grid.Column="1">0</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="2">0</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="3">0</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="4">0</TextBlock>
-        <CheckBox Grid.Row="2" Grid.Column="6" />  
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding w12}" />
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding w22}" />
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding w32}" />
+        <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding w42}" />
+        <CheckBox Grid.Row="2" Grid.Column="6" IsChecked="{Binding p2, Mode=TwoWay}" />  
   
-        <TextBlock Grid.Row="3" Grid.Column="1">0</TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="2">0</TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="3">0</TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="4">0</TextBlock>
-        <CheckBox Grid.Row="3" Grid.Column="6" />  
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding w13}" />
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding w23}" />
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="{Binding w33}" />
+        <TextBlock Grid.Row="3" Grid.Column="4" Text="{Binding w43}" />
+        <CheckBox Grid.Row="3" Grid.Column="6" IsChecked="{Binding p3, Mode=TwoWay}" />  
 
-        <TextBlock Grid.Row="4" Grid.Column="1">0</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="2">0</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="3">0</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="4">0</TextBlock>
-        <CheckBox Grid.Row="4" Grid.Column="6" />  
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding w14}" />
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding w24}" />
+        <TextBlock Grid.Row="4" Grid.Column="3" Text="{Binding w34}" />
+        <TextBlock Grid.Row="4" Grid.Column="4" Text="{Binding w44}" />
+        <CheckBox Grid.Row="4" Grid.Column="6" IsChecked="{Binding p4, Mode=TwoWay}" />  
             
         <Button Command="h:Commands.Train" Grid.Row="5" Grid.Column="6">Train</Button>
         <Button Command="h:Commands.Identify" Grid.Row="5" Grid.Column="7">Identify</Button>
+        
       </Grid>  
     </StackPanel>
   </StackPanel>

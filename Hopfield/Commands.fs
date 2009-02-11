@@ -2,6 +2,7 @@
 
 namespace Hopfield
 
+    open System.Collections.Generic
     open System.Windows
     open System.Windows.Controls
     open System.Windows.Input
@@ -18,7 +19,7 @@ namespace Hopfield
         static let identify (s:obj) (e:ExecutedRoutedEventArgs) : unit = 
             let view = s :?> UserControl
             let model = view.DataContext :?> HopfieldViewModel
-            let p = Ops.present model.Pattern model.Weights
+            let p = Ops.present (List.of_seq model.Pattern) model.Weights |> Array.of_list
             view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, model.Weights, p)
         
         static let canIdentify s e = true
@@ -26,7 +27,7 @@ namespace Hopfield
         static let train (s:obj) (e:ExecutedRoutedEventArgs) : unit =
             let view = s :?> UserControl
             let model = view.DataContext :?> HopfieldViewModel
-            let w = Ops.train model.Pattern model.Weights
+            let w = Ops.train (List.of_seq model.Pattern) model.Weights
             view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, w, model.Pattern)
         
         static let canTrain s e = true
