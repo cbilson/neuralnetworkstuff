@@ -53,7 +53,8 @@
         <Button Command="h:Commands.Train" Grid.Row="5" Grid.Column="6">Train</Button>
         <Button Command="h:Commands.Identify" Grid.Row="5" Grid.Column="7">Identify</Button>
         
-      </Grid>  
+      </Grid>
+      <Image Width="400" Height="300" />
     </StackPanel>
   </StackPanel>
 </UserControl>

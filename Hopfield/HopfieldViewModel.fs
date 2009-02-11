@@ -5,17 +5,19 @@ namespace Hopfield
     open System.Collections.Generic
     open Microsoft.FSharp.Math
 
-    type HopfieldViewModel(n,w,p:bool array) =
+    type HopfieldViewModel(n,w,p:bool array,graph:System.Drawing.Bitmap) =
         let mutable pattern = p
         
-        new(n) = HopfieldViewModel(n, Matrix.zero n n, Array.init n (fun x -> false))
+        new(n, m, a) = HopfieldViewModel(n, m, a, null)
+        new(n) = HopfieldViewModel(n, Matrix.zero n n, Array.init n (fun x -> false), null)
         new() = HopfieldViewModel(4)
         
         member public x.NumberOfNodes with get() = n
         member public x.Weights with get() = w
         member public x.Pattern with get() = pattern
+        member public x.Graph with get() = graph
 
-        member public x.p1 
+        member public x.p1  
             with get() = pattern.[0]
             and  set(v) = pattern.[0] <- v
 
@@ -31,7 +33,7 @@ namespace Hopfield
             with get() = pattern.[3]
             and  set(v) = pattern.[3] <- v
             
-        member public x.w11 with get() = w.Item(0,0)
+        member public x.w11 with get() = w.[0,0]
         member public x.w21 with get() = w.Item(1,0)
         member public x.w31 with get() = w.Item(2,0)
         member public x.w41 with get() = w.Item(3,0)

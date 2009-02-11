@@ -3,10 +3,12 @@
 namespace Hopfield
 
     open System.Collections.Generic
+    open System.Drawing
     open System.Windows
     open System.Windows.Controls
     open System.Windows.Input
     open System.Windows.Threading
+    open Microsoft.Glee.Drawing
     open Microsoft.FSharp.Math
     open ApplicationCore.XamlHelpers
 
@@ -23,11 +25,39 @@ namespace Hopfield
             view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, model.Weights, p)
         
         static let canIdentify s e = true
+        
+        static let addNodes (w:matrix) (g:Graph) =
+            let n = w.NumCols
+            for i = 0 to (n-1) do
+                g.AddNode (sprintf "n%d" i) |> ignore
+                
+        static let addEdges (w:matrix) (g:Graph) =
+            let n = w.NumCols
+            for i = 0 to (n-1) do
+                for j = 0 to (n-1) do
+                    if j <> i then
+                        let n1 = sprintf "n%d" i
+                        let n2 = sprintf "n%d" j
+                        let label = sprintf "%e" (w.[i,j])
+                        g.AddEdge(n1, n2, label) |> ignore
+                        
+                        
+        static let makeGraph (w:matrix) = 
+            let g = new Graph("Network")
+            addNodes w g
+            addEdges w g
+            let r = new Microsoft.Glee.GraphViewerGdi.GraphRenderer(g)
+            let bmp = new Bitmap(400, 300, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+            r.Render(bmp)
+            bmp
 
         static let train (s:obj) (e:ExecutedRoutedEventArgs) : unit =
             let view = s :?> UserControl
             let model = view.DataContext :?> HopfieldViewModel
             let w = Ops.train (List.of_seq model.Pattern) model.Weights
+            
+            let graph = makeGraph w
+            
             view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, w, model.Pattern)
         
         static let canTrain s e = true
