@@ -54,7 +54,7 @@
         <Button Command="h:Commands.Identify" Grid.Row="5" Grid.Column="7">Identify</Button>
         
       </Grid>
-      <Image Width="400" Height="300" />
+      <Image Width="400" Height="300" Source="{Binding Graph}" />
     </StackPanel>
   </StackPanel>
 </UserControl>

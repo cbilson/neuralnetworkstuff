@@ -7,6 +7,7 @@ namespace Hopfield
     open System.Windows
     open System.Windows.Controls
     open System.Windows.Input
+    open System.Windows.Media.Imaging
     open System.Windows.Threading
     open Microsoft.Glee.Drawing
     open Microsoft.FSharp.Math
@@ -43,13 +44,19 @@ namespace Hopfield
                         
                         
         static let makeGraph (w:matrix) = 
-            let g = new Graph("Network")
+            let g = new Microsoft.Glee.Drawing.Graph("Network")
             addNodes w g
             addEdges w g
             let r = new Microsoft.Glee.GraphViewerGdi.GraphRenderer(g)
             let bmp = new Bitmap(400, 300, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
             r.Render(bmp)
-            bmp
+            let hbmp = bmp.GetHbitmap()
+            let rect = new Int32Rect(0, 0, bmp.Width, bmp.Height)
+            
+            System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbmp, 
+                                                                         System.IntPtr.Zero,
+                                                                         rect, 
+                                                                         BitmapSizeOptions.FromEmptyOptions())
 
         static let train (s:obj) (e:ExecutedRoutedEventArgs) : unit =
             let view = s :?> UserControl

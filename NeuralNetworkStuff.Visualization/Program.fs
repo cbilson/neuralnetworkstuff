@@ -17,7 +17,7 @@ let mainWin =
 [<STAThread>]
 do
     let w = mainWin
-    showHopfieldView w
+    showHopfieldView w |> ignore
     
     w.Show()
 

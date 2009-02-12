@@ -5,7 +5,7 @@ namespace Hopfield
     open System.Collections.Generic
     open Microsoft.FSharp.Math
 
-    type HopfieldViewModel(n,w,p:bool array,graph:System.Drawing.Bitmap) =
+    type HopfieldViewModel(n,w,p:bool array,graph:System.Windows.Media.Imaging.BitmapImage) =
         let mutable pattern = p
         
         new(n, m, a) = HopfieldViewModel(n, m, a, null)
