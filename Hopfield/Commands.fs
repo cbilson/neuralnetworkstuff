@@ -50,6 +50,7 @@ namespace Hopfield
             let r = new Microsoft.Glee.GraphViewerGdi.GraphRenderer(g)
             let bmp = new Bitmap(400, 300, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
             r.Render(bmp)
+            bmp.Save(@"C:\Temp\tmp.png")
             let hbmp = bmp.GetHbitmap()
             let rect = new Int32Rect(0, 0, bmp.Width, bmp.Height)
             
@@ -65,7 +66,7 @@ namespace Hopfield
             
             let graph = makeGraph w
             
-            view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, w, model.Pattern)
+            view.DataContext <- new HopfieldViewModel(model.NumberOfNodes, w, model.Pattern, graph)
         
         static let canTrain s e = true
 
