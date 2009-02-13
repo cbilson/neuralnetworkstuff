@@ -2,15 +2,15 @@
 
 namespace Hopfield
 
-    open System.Collections.Generic
+    open System.Windows.Media
     open Microsoft.FSharp.Math
 
-    type HopfieldViewModel(n,w,p:bool array,graph:System.Windows.Media.Imaging.BitmapSource) =
+    type ViewModel(n,w,p:bool array,graph:Imaging.BitmapSource) =
         let mutable pattern = p
         
-        new(n, m, a) = HopfieldViewModel(n, m, a, null)
-        new(n) = HopfieldViewModel(n, Matrix.zero n n, Array.init n (fun x -> false), null)
-        new() = HopfieldViewModel(4)
+        new(n, m, a) = ViewModel(n, m, a, null)
+        new(n) = ViewModel(n, Matrix.zero n n, Array.init n (fun x -> false), null)
+        new() = ViewModel(4)
         
         member public x.NumberOfNodes with get() = n
         member public x.Weights with get() = w

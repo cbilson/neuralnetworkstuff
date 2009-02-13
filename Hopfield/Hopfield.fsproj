@@ -31,8 +31,10 @@
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HopfieldViewModel.fs" />
+    <Compile Include="ViewModel.fs" />
     <Compile Include="Ops.fs" />
+    <Compile Include="Graphs.fs" />
+    <Compile Include="Controller.fs" />
     <Compile Include="Commands.fs" />
     <EmbeddedResource Include="HopfieldView.xaml" />
     <Compile Include="Module.fs" />

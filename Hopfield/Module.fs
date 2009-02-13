@@ -7,6 +7,7 @@ namespace Hopfield
     open System.Windows.Input
     open ApplicationCore.App
     open ApplicationCore.XamlHelpers
+    open Controller
 
     module Module =
 
@@ -18,6 +19,6 @@ namespace Hopfield
                             :?> UserControl
             
             Commands.AddCommands view
-            view.DataContext <- new HopfieldViewModel() :> obj
+            initView view
                 
             
