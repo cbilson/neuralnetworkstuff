@@ -9,8 +9,8 @@ open Graphs
 let makeModel n w p =
     new ViewModel(n, w, p, (makeGraph w)) 
 
-let initView v : unit =
-    ignore()
+let initView (v:UserControl) : unit =
+    v.DataContext <- new ViewModel()
 
 let getModel (view:obj) = 
     let v = view :?> UserControl
